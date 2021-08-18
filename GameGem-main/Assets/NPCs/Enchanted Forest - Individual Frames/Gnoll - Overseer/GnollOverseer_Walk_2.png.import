@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/GnollOverseer_Walk_2.png-dbca8cdf2d2b0526ce6d33e8c646091d.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Assets/NPCs/Enchanted Forest - Individual Frames/Gnoll - Overseer/GnollOverseer_Walk_2.png"
+dest_files=[ "res://.import/GnollOverseer_Walk_2.png-dbca8cdf2d2b0526ce6d33e8c646091d.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

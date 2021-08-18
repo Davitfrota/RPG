@@ -1,0 +1,297 @@
+[gd_scene load_steps=53 format=2]
+
+[ext_resource path="res://Scenes/Enemies/Padre.gd" type="Script" id=1]
+[ext_resource path="res://WhiteColor.shader" type="Shader" id=2]
+[ext_resource path="res://Assets/NPCs/Fantasy RPG NPCs - Individuel Frames/Bishop/Bishop_Idle + Walk_1.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Overlap/Hitbox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/NPCs/Fantasy RPG NPCs - Individuel Frames/Bishop/Bishop_Idle + Walk_2.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Overlap/PlayerDetectionZone.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Overlap/Hurtbox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Overlap/Stats.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/NPCs/Fantasy RPG NPCs - Individuel Frames/Bishop/Bishop_Idle + Walk_3.png" type="Texture" id=9]
+[ext_resource path="res://Assets/NPCs/Fantasy RPG NPCs - Individuel Frames/Bishop/Bishop_Idle + Walk_4.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Enemies/Attributes/Padre.tres" type="Resource" id=11]
+[ext_resource path="res://Menu/medieval-pixel.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://Assets/Baphomet/GoatDemonSheet.png" type="Texture" id=13]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 2 )
+shader_param/active = false
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 13 )
+region = Rect2( 512, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 13 )
+region = Rect2( 1024, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 13 )
+region = Rect2( 1536, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 13 )
+region = Rect2( 2048, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 13 )
+region = Rect2( 2560, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 13 )
+region = Rect2( 3072, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 13 )
+region = Rect2( 3584, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 13 )
+region = Rect2( 4096, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 13 )
+region = Rect2( 4608, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 13 )
+region = Rect2( 5120, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 13 )
+region = Rect2( 5632, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 13 )
+region = Rect2( 6144, 0, 512, 512 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "DemonForm",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 13 )
+region = Rect2( 512, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 13 )
+region = Rect2( 1024, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 13 )
+region = Rect2( 1536, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 13 )
+region = Rect2( 2048, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 13 )
+region = Rect2( 2560, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 13 )
+region = Rect2( 3072, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 13 )
+region = Rect2( 3584, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 13 )
+region = Rect2( 4096, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 13 )
+region = Rect2( 4608, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 13 )
+region = Rect2( 5120, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 13 )
+region = Rect2( 5632, 0, 512, 512 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 13 )
+region = Rect2( 6144, 0, 512, 512 )
+
+[sub_resource type="SpriteFrames" id=41]
+animations = [ {
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
+"loop": true,
+"name": "DemonForm",
+"speed": 3.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 5.0
+height = 0.0
+
+[sub_resource type="Animation" id=6]
+
+[sub_resource type="Animation" id=7]
+length = 0.55
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="Animation" id=8]
+
+[sub_resource type="Animation" id=9]
+
+[sub_resource type="Animation" id=10]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:material:shader_param/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=11]
+
+[sub_resource type="CapsuleShape2D" id=12]
+radius = 8.0
+height = 8.0
+
+[sub_resource type="CapsuleShape2D" id=13]
+radius = 8.0
+height = 10.0
+
+[sub_resource type="DynamicFont" id=14]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
+
+[node name="Padre" type="KinematicBody2D" groups=[
+"Enemy",
+]]
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+enemyAttributes = ExtResource( 11 )
+boss = true
+ranged = true
+eventEnemy = true
+
+[node name="Stats" parent="." instance=ExtResource( 8 )]
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+material = SubResource( 1 )
+frames = SubResource( 2 )
+animation = "Idle"
+frame = 2
+playing = true
+
+[node name="DemonFormSprite" type="AnimatedSprite" parent="."]
+visible = false
+scale = Vector2( 0.11, 0.1 )
+frames = SubResource( 41 )
+animation = "DemonForm"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 11 )
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Attack = SubResource( 6 )
+anims/Idle = SubResource( 7 )
+anims/RangeAttack = SubResource( 8 )
+anims/Run = SubResource( 9 )
+
+[node name="EnemyBlinkAnimation" type="AnimationPlayer" parent="."]
+anims/Start = SubResource( 10 )
+anims/Stop = SubResource( 11 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 4 )]
+collision_layer = 128
+collision_mask = 16
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 0, 6 )
+shape = SubResource( 12 )
+disabled = true
+
+[node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="Hurtbox" parent="." instance=ExtResource( 7 )]
+collision_layer = 32
+collision_mask = 72
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 0, 6 )
+shape = SubResource( 13 )
+
+[node name="DialogBox" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogText" type="Label" parent="DialogBox"]
+margin_left = -44.0
+margin_top = -37.0
+margin_right = 134.0
+margin_bottom = 20.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 14 )
+text = "KILL HIM!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+[connection signal="area_entered" from="Hurtbox" to="Stats" method="_on_Hurtbox_area_entered"]
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_Hurtbox_area_entered"]
+[connection signal="body_entered" from="Hurtbox" to="Stats" method="_on_Hurtbox_body_entered"]
+[connection signal="damaged" from="Hurtbox" to="Stats" method="_on_Hurtbox_damaged"]
+
+[editable path="Hitbox"]
+
+[editable path="Hurtbox"]

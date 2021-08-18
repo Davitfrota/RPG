@@ -1,0 +1,167 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Scenes/Enemies/Base/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://WhiteColor.shader" type="Shader" id=2]
+[ext_resource path="res://Scenes/Weapons/Base/Weapon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Overlap/Hitbox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Overlap/PlayerDetectionZone.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Overlap/Hurtbox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Overlap/Stats.tscn" type="PackedScene" id=8]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 2 )
+shader_param/active = false
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 2 )
+shader_param/active = false
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 5.0
+height = 0.0
+
+[sub_resource type="Animation" id=5]
+
+[sub_resource type="Animation" id=6]
+length = 0.55
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="Animation" id=7]
+
+[sub_resource type="Animation" id=8]
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Start"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:material:shader_param/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:material:shader_param/active")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "Stop"
+
+[sub_resource type="CircleShape2D" id=11]
+
+[sub_resource type="CircleShape2D" id=12]
+radius = 7.0
+
+[node name="Enemy" type="KinematicBody2D" groups=[
+"Enemy",
+]]
+script = ExtResource( 1 )
+speed = 0
+
+[node name="Stats" parent="." instance=ExtResource( 8 )]
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 1 )
+hframes = 6
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+material = SubResource( 2 )
+frames = SubResource( 3 )
+animation = "Run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1 )
+shape = SubResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Attack = SubResource( 5 )
+anims/Idle = SubResource( 6 )
+anims/RangeAttack = SubResource( 7 )
+anims/Run = SubResource( 8 )
+
+[node name="EnemyBlinkAnimation" type="AnimationPlayer" parent="."]
+anims/Start = SubResource( 9 )
+anims/Stop = SubResource( 10 )
+
+[node name="Weapon" parent="." instance=ExtResource( 3 )]
+
+[node name="Hitbox" parent="." instance=ExtResource( 4 )]
+collision_layer = 128
+collision_mask = 16
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource( 11 )
+
+[node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="Hurtbox" parent="." instance=ExtResource( 7 )]
+collision_layer = 32
+collision_mask = 72
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource( 12 )
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_Hurtbox_area_entered"]
+[connection signal="area_entered" from="Hurtbox" to="Stats" method="_on_Hurtbox_area_entered"]
+[connection signal="body_entered" from="Hurtbox" to="Stats" method="_on_Hurtbox_body_entered"]
+[connection signal="damaged" from="Hurtbox" to="Stats" method="_on_Hurtbox_damaged"]
+
+[editable path="Weapon"]
+
+[editable path="Hitbox"]
+
+[editable path="Hurtbox"]

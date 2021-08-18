@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Gozada_do_Davi-consolidated.wav-13d8a317655a7b780fd8934706bff323.sample"
+
+[deps]
+
+source_file="res://Videos & Audio/Audio/Gozada_do_Davi-consolidated.wav"
+dest_files=[ "res://.import/Gozada_do_Davi-consolidated.wav-13d8a317655a7b780fd8934706bff323.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

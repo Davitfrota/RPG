@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Weapons/Base/WeaponScript.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Weapons/Swords/outline original.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 146, 21, 11, 22 )
+
+[resource]
+script = ExtResource( 1 )
+scaleX = 1.0
+scaleY = 1.0
+name = "WarAxe"
+weaponId = 5
+weaponType = 0
+meleeType = 2
+rangedType = 0
+staffEnergyType = 0
+texture = SubResource( 1 )
+isInEnemy = false
+damage = 50
+manaUsage = 0
+staminaUsage = 30
+attackSpeed = 1.5

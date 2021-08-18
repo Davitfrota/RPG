@@ -1,0 +1,242 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Scenes/Weapons/Base/weaponHitbox.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Weapons/Base/Weapon.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Area/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/slash_effect_anim_spritesheet.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Medieval weapons pack/Wands/Wands-original.png" type="Texture" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 4 )
+region = Rect2( 96, 75, 5, 22 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "Melee",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=6]
+length = 0.65
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 10 ), Vector2( -10, 10 ), Vector2( 10, 10 ), Vector2( 9.53674e-07, 10 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.65
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 10 ), Vector2( 0, 0 ), Vector2( 0, 20 ), Vector2( 0, 10 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.65
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 10 ), Vector2( 9, 1 ), Vector2( -9, 19 ), Vector2( 0, 10 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.65
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 10 ), Vector2( -9, 1 ), Vector2( 9, 19 ), Vector2( 0, 10 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.65
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 10 ), Vector2( 10, 10 ), Vector2( -10, 10 ), Vector2( -9.53674e-07, 10 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.65
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 10 ), Vector2( 0, 20 ), Vector2( 0, 0 ), Vector2( 0, 10 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 0.65
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 10 ), Vector2( 9, 19 ), Vector2( -9, 1 ), Vector2( 0, 10 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.65
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 10 ), Vector2( -9, 19 ), Vector2( 9, 1 ), Vector2( 0, 10 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("EffectsAnimatedSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("weaponHitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 90.0002, 25.0, 155.0, 90.0 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=15]
+height = 15.0
+
+[node name="Weapon" type="Sprite"]
+position = Vector2( 0, 10 )
+scale = Vector2( 0.8, 0.8 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -3.75, 0 )
+rotation = 1.5708
+texture = SubResource( 1 )
+offset = Vector2( 0.00472452, -14.5364 )
+
+[node name="AttackSpeed" type="Timer" parent="."]
+
+[node name="EffectsAnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 22.5, 0 )
+frames = SubResource( 5 )
+animation = "Melee"
+
+[node name="EnemyAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/MeleeAttack = SubResource( 6 )
+anims/MeleeAttackDown = SubResource( 7 )
+anims/MeleeAttackDownLeft = SubResource( 8 )
+anims/MeleeAttackDownRight = SubResource( 9 )
+anims/MeleeAttackRight = SubResource( 10 )
+anims/MeleeAttackUp = SubResource( 11 )
+anims/MeleeAttackUpLeft = SubResource( 12 )
+anims/MeleeAttackUpRight = SubResource( 13 )
+
+[node name="PlayerAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/MeleeRight = SubResource( 14 )
+
+[node name="weaponHitbox" type="Area2D" parent="." groups=[
+"WeaponHitbox",
+]]
+position = Vector2( 5, 0 )
+collision_layer = 0
+collision_mask = 16
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="weaponHitbox"]
+position = Vector2( 11.25, 0 )
+rotation = 1.5708
+shape = SubResource( 15 )
+disabled = true

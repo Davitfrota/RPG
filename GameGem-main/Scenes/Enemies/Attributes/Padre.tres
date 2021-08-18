@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Enemies/Base/EnemyScript.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+enemyName = "Padre"
+enemyFamily = 3
+enemyUndeadType = 0
+enemyDemonType = 0
+enemyForestType = 0
+enemyHumanType = 4
+strengthValue = 0
+enduranceValue = 5
+staminaValue = 5
+intelligenceValue = 50
+summonManaCost = 2000

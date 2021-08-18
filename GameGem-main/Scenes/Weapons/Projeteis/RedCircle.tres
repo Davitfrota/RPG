@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Projectiles/Project02.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Weapons/Projeteis/Base/Projectil.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Projectiles/light.png" type="Texture" id=3]
+
+[resource]
+script = ExtResource( 2 )
+scaleX = 0.6
+scaleY = 0.6
+collisionRadius = 5
+staticTexture = ExtResource( 1 )
+lightTexture = ExtResource( 3 )
+subdivide = false
+speed = 400
+ricochetes = 0

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Weapons/Base/WeaponScript.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Area/v1.1 dungeon crawler 16x16 pixel pack/enemies/goblin/goblin_knife.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+scaleX = 1.0
+scaleY = 1.0
+name = "Goblin Knife"
+weaponType = 0
+meleeType = 1
+rangedType = 0
+staffEnergyType = 0
+texture = ExtResource( 2 )
+damage = 5
+manaUsage = 0
+staminaUsage = 2
+attackSpeed = 0.4

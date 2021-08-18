@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Player/Classes/Classes.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Weapons/Swords/BrokenSword.tres" type="Resource" id=2]
+
+[resource]
+script = ExtResource( 1 )
+classType = 1
+defaultWeapon = ExtResource( 2 )
+strengthValue = 15
+enduranceValue = 15
+staminaValue = 15
+intelligenceValue = 5
+luckValue = 0

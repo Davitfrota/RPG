@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Weapons/Base/WeaponScript.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Weapons/Projeteis/Melee.tres" type="Resource" id=2]
+
+[resource]
+script = ExtResource( 1 )
+scaleX = 1.0
+scaleY = 1.0
+name = "Hands"
+weaponId = 0
+weaponType = 0
+meleeType = 0
+rangedType = 0
+staffEnergyType = 0
+projectile = ExtResource( 2 )
+isInEnemy = false
+damage = 1
+manaUsage = 0
+staminaUsage = 5
+attackSpeed = 0.25

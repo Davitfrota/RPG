@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/espinhos00.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/espinhos02.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/espinhos03.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/espinhos01.png" type="Texture" id=4]
+[ext_resource path="res://TrapSolo.gd" type="Script" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "Down",
+"speed": 40.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "Up",
+"speed": 40.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24.0484, 7.95708 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 24.0789, 0.927246 )
+
+[node name="Trap" type="StaticBody2D"]
+position = Vector2( 32, -16 )
+script = ExtResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 32, 0 )
+frames = SubResource( 1 )
+animation = "Down"
+frame = 3
+playing = true
+
+[node name="CollisionShapeT" type="CollisionShape2D" parent="."]
+position = Vector2( 31.9541, -3.8147e-06 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 31.8558, 9.08479 )
+shape = SubResource( 3 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

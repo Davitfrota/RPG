@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Player/Classes/Classes.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Weapons/Staffs/BasicIceStaff.tres" type="Resource" id=2]
+
+[resource]
+script = ExtResource( 1 )
+classType = 2
+defaultWeapon = ExtResource( 2 )
+strengthValue = 5
+enduranceValue = 10
+staminaValue = 10
+intelligenceValue = 25
+luckValue = 0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/medieval_music_cobblestone_village_Wqn3_nIByoK-gucZ5bdc.ogg-a83fa84c76d12be0c5547552839c48e8.oggstr"
+
+[deps]
+
+source_file="res://Videos & Audio/Audio/medieval_music_cobblestone_village_Wqn3_nIByoK-gucZ5bdc.ogg"
+dest_files=[ "res://.import/medieval_music_cobblestone_village_Wqn3_nIByoK-gucZ5bdc.ogg-a83fa84c76d12be0c5547552839c48e8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

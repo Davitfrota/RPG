@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/touch01.tres" type="Texture" id=1]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/touch03.tres" type="Texture" id=2]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/light.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/touch05.tres" type="Texture" id=7]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/touch07.tres" type="Texture" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+} ]
+
+[node name="Touch" type="Node2D"]
+position = Vector2( 0, -1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 3
+playing = true
+
+[node name="Light2D" type="Light2D" parent="AnimatedSprite"]
+enabled = false
+texture = ExtResource( 3 )
+energy = 0.29

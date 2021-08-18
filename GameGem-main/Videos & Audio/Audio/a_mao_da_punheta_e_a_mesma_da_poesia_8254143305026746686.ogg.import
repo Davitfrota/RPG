@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/a_mao_da_punheta_e_a_mesma_da_poesia_8254143305026746686.ogg-040c0c0161b86a99feaa8286f304fb74.oggstr"
+
+[deps]
+
+source_file="res://Videos & Audio/Audio/a_mao_da_punheta_e_a_mesma_da_poesia_8254143305026746686.ogg"
+dest_files=[ "res://.import/a_mao_da_punheta_e_a_mesma_da_poesia_8254143305026746686.ogg-040c0c0161b86a99feaa8286f304fb74.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

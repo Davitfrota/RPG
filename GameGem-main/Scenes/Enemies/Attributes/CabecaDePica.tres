@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Enemies/Base/EnemyScript.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+enemyName = "Bastão Zumbi"
+enemyFamily = 0
+enemyUndeadType = 1
+enemyDemonType = 0
+enemyForestType = 0
+enemyHumanType = 0
+strengthValue = 5
+enduranceValue = 3
+staminaValue = 5
+intelligenceValue = 5
+summonManaCost = 100

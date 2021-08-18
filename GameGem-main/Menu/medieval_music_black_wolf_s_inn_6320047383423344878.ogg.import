@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/medieval_music_black_wolf_s_inn_6320047383423344878.ogg-11698d6b839ab38d4aa62972fce2a3b8.oggstr"
+
+[deps]
+
+source_file="res://Menu/medieval_music_black_wolf_s_inn_6320047383423344878.ogg"
+dest_files=[ "res://.import/medieval_music_black_wolf_s_inn_6320047383423344878.ogg-11698d6b839ab38d4aa62972fce2a3b8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

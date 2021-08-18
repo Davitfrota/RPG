@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Weapons/Base/WeaponScript.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+scaleX = 1.0
+scaleY = 1.0
+name = "PlateSword"
+weaponId = 0
+weaponType = 0
+meleeType = 1
+rangedType = 0
+staffEnergyType = 0
+isInEnemy = false
+damage = 1
+manaUsage = 0
+staminaUsage = 0
+attackSpeed = 0.1

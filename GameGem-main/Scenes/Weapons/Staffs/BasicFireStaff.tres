@@ -1,0 +1,27 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Weapons/Projeteis/RedCircle.tres" type="Resource" id=1]
+[ext_resource path="res://Assets/Medieval weapons pack/Wands/Wands-original.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Weapons/Base/WeaponScript.gd" type="Script" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 6, 75, 6, 23 )
+
+[resource]
+script = ExtResource( 3 )
+scaleX = 0.8
+scaleY = 0.8
+name = "Basic Fire Staff"
+weaponId = 0
+weaponType = 1
+meleeType = 0
+rangedType = 1
+staffEnergyType = 1
+texture = SubResource( 1 )
+projectile = ExtResource( 1 )
+isInEnemy = false
+damage = 5
+manaUsage = 1
+staminaUsage = 0
+attackSpeed = 0.4

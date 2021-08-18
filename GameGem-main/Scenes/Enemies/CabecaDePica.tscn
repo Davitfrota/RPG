@@ -1,0 +1,137 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Scenes/Enemies/Base/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/zombie_idle_anim_f1.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Weapons/Base/Weapon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Overlap/Hitbox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/zombie_run_anim_f3.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Overlap/PlayerDetectionZone.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Overlap/Hurtbox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Overlap/Stats.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/zombie_run_anim_f0.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/zombie_run_anim_f2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/zombie_idle_anim_f3.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/zombie_idle_anim_f2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/zombie_idle_anim_f0.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/zombie_run_anim_f1.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/Weapons/EnemyWeapons/CabecaDePicaWeapon.tres" type="Resource" id=15]
+[ext_resource path="res://Scenes/Enemies/Attributes/CabecaDePica.tres" type="Resource" id=16]
+[ext_resource path="res://Scenes/Enemies/Base/EnemyBlinkAnimation.tscn" type="PackedScene" id=17]
+[ext_resource path="res://WhiteColor.shader" type="Shader" id=18]
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = ExtResource( 18 )
+shader_param/active = false
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 2 ), ExtResource( 12 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 5.0
+height = 0.0
+
+[sub_resource type="Animation" id=3]
+resource_name = "Attack"
+
+[sub_resource type="Animation" id=4]
+length = 0.55
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.5
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "shootProjectile"
+} ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Run"
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 7.0
+
+[node name="Enemy" type="KinematicBody2D" groups=[
+"Enemy",
+]]
+script = ExtResource( 1 )
+enemyAttributes = ExtResource( 16 )
+speed = 40
+ranged = true
+
+[node name="Stats" parent="." instance=ExtResource( 8 )]
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+material = SubResource( 8 )
+frames = SubResource( 1 )
+animation = "Run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Attack = SubResource( 3 )
+anims/Idle = SubResource( 4 )
+anims/RangeAttack = SubResource( 5 )
+anims/Run = SubResource( 6 )
+
+[node name="EnemyBlinkAnimation" parent="." instance=ExtResource( 17 )]
+
+[node name="Weapon" parent="." instance=ExtResource( 3 )]
+weapon = ExtResource( 15 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 4 )]
+collision_layer = 128
+collision_mask = 16
+
+[node name="PlayerDetectionZone" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="Hurtbox" parent="." instance=ExtResource( 7 )]
+collision_layer = 32
+collision_mask = 72
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource( 7 )
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+[connection signal="area_entered" from="Hurtbox" to="Stats" method="_on_Hurtbox_area_entered"]
+[connection signal="body_entered" from="Hurtbox" to="Stats" method="_on_Hurtbox_body_entered"]
+[connection signal="damaged" from="Hurtbox" to="Stats" method="_on_Hurtbox_damaged"]
+
+[editable path="Weapon"]
+
+[editable path="Hitbox"]
+
+[editable path="Hurtbox"]

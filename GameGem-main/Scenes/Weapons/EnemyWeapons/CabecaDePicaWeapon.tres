@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Weapons/Base/WeaponScript.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Weapons/Projeteis/CabecaDePicaProjectil.tres" type="Resource" id=2]
+
+[resource]
+script = ExtResource( 1 )
+scaleX = 1.0
+scaleY = 1.0
+name = ""
+weaponId = 0
+weaponType = 1
+meleeType = 0
+rangedType = 1
+staffEnergyType = 3
+projectile = ExtResource( 2 )
+isInEnemy = false
+damage = 0
+manaUsage = 0
+staminaUsage = 0
+attackSpeed = 1.0

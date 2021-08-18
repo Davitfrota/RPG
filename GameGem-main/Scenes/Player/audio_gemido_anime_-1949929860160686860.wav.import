@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/audio_gemido_anime_-1949929860160686860.wav-a7ba9966a0073304d4a41f899f472fe5.sample"
+
+[deps]
+
+source_file="res://Scenes/Player/audio_gemido_anime_-1949929860160686860.wav"
+dest_files=[ "res://.import/audio_gemido_anime_-1949929860160686860.wav-a7ba9966a0073304d4a41f899f472fe5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

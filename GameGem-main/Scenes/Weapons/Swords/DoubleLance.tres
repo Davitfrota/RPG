@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Weapons/Swords/outline original.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Weapons/Base/WeaponScript.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 49, 7, 30 )
+
+[resource]
+script = ExtResource( 2 )
+scaleX = 1.0
+scaleY = 1.0
+name = "Double Lance"
+weaponId = 4
+weaponType = 0
+meleeType = 0
+rangedType = 0
+staffEnergyType = 0
+texture = SubResource( 1 )
+isInEnemy = false
+damage = 25
+manaUsage = 0
+staminaUsage = 10
+attackSpeed = 0.6

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hunter_x_hunter_2011_ost_3_riot_-3469106857905663068.ogg-83b4a253a2921221285644d227c1b26a.oggstr"
+
+[deps]
+
+source_file="res://Menu/hunter_x_hunter_2011_ost_3_riot_-3469106857905663068.ogg"
+dest_files=[ "res://.import/hunter_x_hunter_2011_ost_3_riot_-3469106857905663068.ogg-83b4a253a2921221285644d227c1b26a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

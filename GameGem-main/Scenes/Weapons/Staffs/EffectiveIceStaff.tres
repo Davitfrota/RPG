@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Weapons/Base/WeaponScript.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Weapons/Staffs/Wands-x2.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 214, 82, 14, 46 )
+
+[resource]
+script = ExtResource( 1 )
+scaleX = 1.0
+scaleY = 1.0
+name = "Effective Ice Staff"
+weaponType = 1
+meleeType = 0
+rangedType = 1
+staffEnergyType = 2
+texture = SubResource( 1 )
+damage = 15
+manaUsage = 10
+staminaUsage = 0
+attackSpeed = 0.55

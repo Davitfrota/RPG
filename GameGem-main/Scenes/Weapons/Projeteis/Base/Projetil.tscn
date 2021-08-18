@@ -1,0 +1,121 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends KinematicBody2D
+
+onready var weapon = get_parent().get_node(\"Player/Weapon\")
+onready var enemyWeapon = get_parent().get_node(\"Enemy/Weapon\")
+#onready var weapon = get_parent().get_node(\"Weapon\")
+#onready var player = get_parent().get_node(\"Player\")
+onready var subject = get_parent().get_node(\"Player\")
+onready var enemySubject = get_parent().get_node(\"Enemy\")
+onready var sprite = $Sprite;
+onready var animatedSprite = $AnimatedSprite;
+onready var light2D = $Light2D;
+onready var collisionShape = $CollisionShape2D;
+
+onready var damage;
+
+var direction = Vector2(0,0);
+var speed = 0;
+var motion = Vector2(0,0);
+
+func _ready():
+	#Principal
+	print(\"Subject = \" + str(subject))
+	if(is_instance_valid(subject) and subject.is_in_group(\"Player\")):
+		damage = weapon.weapon.damage;
+		if(weapon.weapon.projectile != null):
+			self.scale.x = weapon.weapon.projectile.scaleX;
+			self.scale.y = weapon.weapon.projectile.scaleY;
+		
+	if(is_instance_valid(enemySubject) and enemySubject.is_in_group(\"Enemy\")):
+		damage = enemyWeapon.weapon.damage;
+		
+		self.scale.x = enemyWeapon.weapon.projectile.scaleX;
+		self.scale.y = enemyWeapon.weapon.projectile.scaleY;
+	
+	$ActiveTime.start()
+	
+	#Collision
+	if(is_instance_valid(subject) and subject.is_in_group(\"Player\") and weapon.weapon.projectile != null):
+		collisionShape.shape.radius = weapon.weapon.projectile.collisionRadius
+	elif(is_instance_valid(enemySubject) and enemySubject.is_in_group(\"Enemy\") and enemyWeapon.weapon.projectile != null):
+		collisionShape.shape.radius = enemyWeapon.weapon.projectile.collisionRadius
+	
+	# Movement & Direction
+#	animatedSprite.rotation = get_global_mouse_position().angle()
+	if(is_instance_valid(subject) and subject.is_in_group(\"Player\")):
+		moveToMouse()
+	elif(is_instance_valid(subject) and subject.is_in_group(\"Enemy\") and is_instance_valid(subject.get_node(\"Weapon\"))):
+		moveToTarget()
+	if(is_instance_valid(weapon) and weapon.weapon.projectile != null):
+		speed = weapon.weapon.projectile.speed;
+	elif(is_instance_valid(enemyWeapon) and enemyWeapon.weapon.projectile != null):
+		speed = enemyWeapon.weapon.projectile.speed;
+	
+	#Sprite & Texture
+	if(is_instance_valid(weapon) and is_instance_valid(weapon.weapon.projectile) and weapon.weapon.projectile.staticTexture != null):
+		sprite.visible = true;
+		animatedSprite.visible = false;
+		sprite.texture = weapon.weapon.projectile.staticTexture;
+	if(is_instance_valid(weapon) and is_instance_valid(weapon.weapon.projectile) and weapon.weapon.projectile.lightTexture != null):
+		light2D.texture = weapon.weapon.projectile.lightTexture;
+
+func _physics_process(delta):
+	var collision = move_and_collide(direction * speed * delta)
+	if(is_instance_valid(collision)):
+		queue_free()
+
+func moveToMouse():
+	direction = direction.direction_to(get_global_mouse_position() - self.position)
+#	print(\"Mouse position = \" + str(get_global_mouse_position()))
+#	print(\"Subject = \" + str(get_parent().position))
+#	print(\"Projectile Position = \" + str(self.position))
+#	print(\"Direction = \" + str(direction))
+
+func moveToTarget():
+	direction = direction.direction_to(subject.player.position - subject.position)
+
+func _on_ActiveTime_timeout():
+	queue_free()
+
+func check_for_projectile():
+	return true if(weapon.weapon.projectile != null or enemyWeapon.weapon.projectile != null) else false
+"
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 7.07107
+
+[node name="Projetil" type="KinematicBody2D" groups=[
+"Projectile",
+]]
+collision_layer = 0
+collision_mask = 40
+script = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+rotation = 1.5708
+frames = SubResource( 2 )
+playing = true
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+
+[node name="ActiveTime" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Light2D" type="Light2D" parent="."]
+scale = Vector2( 0.25, 0.25 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )
+[connection signal="timeout" from="ActiveTime" to="." method="_on_ActiveTime_timeout"]

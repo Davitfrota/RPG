@@ -1,0 +1,418 @@
+[gd_scene load_steps=60 format=2]
+
+[ext_resource path="res://Menu/medieval-pixel.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Menu/MenuM.gd" type="Script" id=2]
+[ext_resource path="res://Menu/MonsterFly.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Area/v1.0 dungeon crawler 16x16 pixel pack/heroes/knight/knight_idle_anim_f0.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Area/v1.0 dungeon crawler 16x16 pixel pack/heroes/knight/knight_idle_anim_f1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/big_demon_run_anim_f2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/big_demon_run_anim_f1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/big_demon_idle_anim_f3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/big_zombie_run_anim_f1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/big_demon_run_anim_f3.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/big_zombie_idle_anim_f2.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/big_zombie_run_anim_f2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/chest_full_open_anim_f1.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/wizzard_m_idle_anim_f1.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/big_zombie_idle_anim_f0.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Area/v1.0 dungeon crawler 16x16 pixel pack/heroes/knight/knight_idle_anim_f3.png" type="Texture" id=16]
+[ext_resource path="res://Menu/HunterxHunter (online-audio-converter.com).ogg" type="AudioStream" id=17]
+[ext_resource path="res://Assets/Area/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_idle_anim_f0.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/big_demon_idle_anim_f1.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Area/v1.0 dungeon crawler 16x16 pixel pack/enemies/flying creature/fly_anim_f1.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/big_zombie_run_anim_f0.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/chest_full_open_anim_f0.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/wizzard_m_idle_anim_f0.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/big_zombie_run_anim_f3.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Area/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_run_anim_f0.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Area/v1.0 dungeon crawler 16x16 pixel pack/enemies/flying creature/fly_anim_f0.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Area/v1.0 dungeon crawler 16x16 pixel pack/heroes/knight/knight_idle_anim_f2.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Area/v1.0 dungeon crawler 16x16 pixel pack/enemies/flying creature/fly_anim_f2.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Area/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_idle_anim_f2.png" type="Texture" id=29]
+[ext_resource path="res://Menu/yOYwG8.jpg" type="Texture" id=30]
+[ext_resource path="res://Assets/Area/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_run_anim_f1.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/big_demon_idle_anim_f2.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/big_demon_idle_anim_f0.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Area/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_run_anim_f4.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/chest_full_open_anim_f2.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/wizzard_m_idle_anim_f2.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/big_demon_run_anim_f0.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Area/v1.0 dungeon crawler 16x16 pixel pack/enemies/flying creature/fly_anim_f3.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Area/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_run_anim_f2.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Area/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_idle_anim_f1.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Area/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_run_anim_f3.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/wizzard_m_idle_anim_f3.png" type="Texture" id=42]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/big_zombie_idle_anim_f3.png" type="Texture" id=43]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/frames/big_zombie_idle_anim_f1.png" type="Texture" id=44]
+[ext_resource path="res://Assets/Area/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_run_anim_f5.png" type="Texture" id=45]
+[ext_resource path="res://Assets/Area/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_idle_anim_f3.png" type="Texture" id=46]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 26 ), ExtResource( 20 ), ExtResource( 28 ), ExtResource( 38 ) ],
+"loop": true,
+"name": "Fly",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 3.56529
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 27 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 23 ), ExtResource( 14 ), ExtResource( 36 ), ExtResource( 42 ) ],
+"loop": true,
+"name": "Mago",
+"speed": 4.0
+} ]
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 70
+font_data = ExtResource( 1 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 26 ), ExtResource( 20 ), ExtResource( 28 ), ExtResource( 38 ) ],
+"loop": true,
+"name": "Fly",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 3.56529
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ ExtResource( 25 ), ExtResource( 31 ), ExtResource( 39 ), ExtResource( 41 ), ExtResource( 34 ), ExtResource( 45 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 40 ), ExtResource( 29 ), ExtResource( 46 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 6.0
+} ]
+
+[sub_resource type="DynamicFont" id=10]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ ExtResource( 21 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 44 ), ExtResource( 11 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ ExtResource( 22 ), ExtResource( 13 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 1.0
+} ]
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 37 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 33 ), ExtResource( 19 ), ExtResource( 32 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 6.0
+} ]
+
+[node name="MenuM" type="Node2D"]
+scale = Vector2( 1, 1.00439 )
+script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 512, 304 )
+current = true
+
+[node name="Heros" type="Node2D" parent="."]
+
+[node name="yOYwG8" type="Sprite" parent="Heros"]
+position = Vector2( 512, 912 )
+scale = Vector2( 1.28226, 1 )
+texture = ExtResource( 30 )
+
+[node name="MonsterFly" type="StaticBody2D" parent="Heros"]
+position = Vector2( 784, 720 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MonsterFly" type="AnimatedSprite" parent="Heros/MonsterFly"]
+position = Vector2( 728.798, 79.5173 )
+frames = SubResource( 1 )
+animation = "Fly"
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heros/MonsterFly"]
+position = Vector2( 729.444, 79.7933 )
+shape = SubResource( 2 )
+
+[node name="MonsterFly2" type="StaticBody2D" parent="Heros"]
+position = Vector2( 752, 656 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MonsterFly" type="AnimatedSprite" parent="Heros/MonsterFly2"]
+position = Vector2( 728.798, 79.5173 )
+frames = SubResource( 1 )
+animation = "Fly"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heros/MonsterFly2"]
+position = Vector2( 729.444, 79.7933 )
+shape = SubResource( 2 )
+
+[node name="MonsterFly3" type="StaticBody2D" parent="Heros"]
+position = Vector2( 832, 672 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MonsterFly" type="AnimatedSprite" parent="Heros/MonsterFly3"]
+position = Vector2( 728.798, 79.5173 )
+frames = SubResource( 1 )
+animation = "Fly"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Heros/MonsterFly3"]
+position = Vector2( 729.444, 79.7933 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Heros"]
+position = Vector2( 144, 992 )
+scale = Vector2( 15, 15 )
+frames = SubResource( 3 )
+animation = "Idle"
+frame = 3
+playing = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Heros"]
+position = Vector2( 832, 944 )
+scale = Vector2( 11, 11 )
+frames = SubResource( 4 )
+animation = "Mago"
+frame = 3
+playing = true
+
+[node name="Cavaleiro" type="Button" parent="Heros"]
+margin_left = 32.0
+margin_top = 832.0
+margin_right = 303.0
+margin_bottom = 877.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "CAVALEIRO"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mago" type="Button" parent="Heros"]
+margin_left = 768.0
+margin_top = 832.0
+margin_right = 903.0
+margin_bottom = 877.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "MAGO"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Heros"]
+margin_left = 384.0
+margin_top = 672.0
+margin_right = 665.0
+margin_bottom = 845.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "ESCOLHA
+    SEU
+  HEROI"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Heros"]
+position = Vector2( 768, -32 )
+stream = ExtResource( 17 )
+autoplay = true
+
+[node name="Menu" type="Node2D" parent="."]
+
+[node name="yOYwG8" type="Sprite" parent="Menu"]
+position = Vector2( 512.115, 292.672 )
+scale = Vector2( 1.2887, 1.03178 )
+texture = ExtResource( 30 )
+
+[node name="MonsterFly" type="StaticBody2D" parent="Menu"]
+position = Vector2( 448, -16 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MonsterFly" type="AnimatedSprite" parent="Menu/MonsterFly"]
+position = Vector2( 728.798, 79.5173 )
+frames = SubResource( 7 )
+animation = "Fly"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Menu/MonsterFly"]
+position = Vector2( 729.444, 79.7933 )
+shape = SubResource( 8 )
+
+[node name="MonsterFly2" type="StaticBody2D" parent="Menu"]
+position = Vector2( 1632, 0 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MonsterFly" type="AnimatedSprite" parent="Menu/MonsterFly2"]
+position = Vector2( 728.798, 79.5173 )
+frames = SubResource( 7 )
+animation = "Fly"
+frame = 3
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Menu/MonsterFly2"]
+position = Vector2( 729.444, 79.7933 )
+shape = SubResource( 8 )
+
+[node name="HeroiLonge" type="AnimatedSprite" parent="Menu"]
+visible = false
+position = Vector2( 438.4, 200.893 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 9 )
+animation = "Run"
+frame = 1
+playing = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 790.0
+margin_top = 161.0
+margin_right = 1011.0
+margin_bottom = 453.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/CenterContainer"]
+margin_left = 9.0
+margin_top = 34.0
+margin_right = 211.0
+margin_bottom = 258.0
+
+[node name="Label" type="Label" parent="Menu/CenterContainer/VBoxContainer"]
+margin_right = 202.0
+margin_bottom = 14.0
+
+[node name="Play" type="Button" parent="Menu/CenterContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 202.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "PLAY"
+flat = true
+
+[node name="Hero" type="Button" parent="Menu/CenterContainer/VBoxContainer"]
+margin_top = 88.0
+margin_right = 202.0
+margin_bottom = 154.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Hero"
+flat = true
+
+[node name="Quit" type="Button" parent="Menu/CenterContainer/VBoxContainer"]
+margin_top = 158.0
+margin_right = 202.0
+margin_bottom = 224.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Quit"
+flat = true
+
+[node name="MonstroLonge" type="AnimatedSprite" parent="Menu"]
+visible = false
+position = Vector2( 555.802, 201.593 )
+frames = SubResource( 11 )
+animation = "Run"
+frame = 1
+playing = true
+
+[node name="Mago1" type="AnimatedSprite" parent="Menu"]
+position = Vector2( 304, 256 )
+scale = Vector2( 11, 11 )
+frames = SubResource( 4 )
+animation = "Mago"
+frame = 2
+playing = true
+
+[node name="Tesouro" type="AnimatedSprite" parent="Menu"]
+visible = false
+position = Vector2( 859.396, 359.904 )
+scale = Vector2( 10, 10 )
+frames = SubResource( 12 )
+animation = "Idle"
+frame = 2
+
+[node name="HeroiPerto" type="AnimatedSprite" parent="Menu"]
+visible = false
+position = Vector2( 315.782, 305.948 )
+scale = Vector2( 15, 15 )
+frames = SubResource( 9 )
+animation = "Run"
+frame = 2
+playing = true
+
+[node name="MonstroPerto" type="AnimatedSprite" parent="Menu"]
+visible = false
+position = Vector2( 859.842, 329.512 )
+scale = Vector2( 6, 6 )
+frames = SubResource( 13 )
+animation = "Idle"
+frame = 2
+playing = true
+flip_h = true
+[connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/Hero" to="." method="_on_Hero_pressed"]
+[connection signal="pressed" from="Menu/CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

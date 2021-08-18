@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Weapons/Base/WeaponScript.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Weapons/Staffs/Wands-x2.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Weapons/Projeteis/RedCircle.tres" type="Resource" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 214, 146, 14, 48 )
+
+[resource]
+script = ExtResource( 1 )
+scaleX = 0.8
+scaleY = 0.8
+name = "Effective Fire Staff"
+weaponType = 1
+meleeType = 0
+rangedType = 1
+staffEnergyType = 1
+texture = SubResource( 1 )
+projectile = ExtResource( 3 )
+damage = 15
+manaUsage = 10
+staminaUsage = 0
+attackSpeed = 0.55

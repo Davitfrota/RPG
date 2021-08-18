@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/HunterxHunter (online-audio-converter.com).ogg-c4f98bbafb826b1f5d1eb26acf16fa4a.oggstr"
+
+[deps]
+
+source_file="res://Menu/HunterxHunter (online-audio-converter.com).ogg"
+dest_files=[ "res://.import/HunterxHunter (online-audio-converter.com).ogg-c4f98bbafb826b1f5d1eb26acf16fa4a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

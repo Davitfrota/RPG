@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DeathSound-[AudioTrimmer.com].wav-d45d4fe42995d3ed346262b831b20cd0.sample"
+
+[deps]
+
+source_file="res://Videos & Audio/Audio/DeathSound-[AudioTrimmer.com].wav"
+dest_files=[ "res://.import/DeathSound-[AudioTrimmer.com].wav-d45d4fe42995d3ed346262b831b20cd0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

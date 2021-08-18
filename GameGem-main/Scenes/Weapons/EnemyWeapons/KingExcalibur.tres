@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Weapons/Swords/outline original.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Weapons/Base/WeaponScript.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 142, 2, 13, 19 )
+
+[resource]
+script = ExtResource( 2 )
+scaleX = 1.0
+scaleY = 1.0
+name = "Excalibur"
+weaponId = 6
+weaponType = 0
+meleeType = 1
+rangedType = 0
+staffEnergyType = 0
+texture = SubResource( 1 )
+isInEnemy = true
+damage = 100
+manaUsage = 0
+staminaUsage = 10
+attackSpeed = 0.8

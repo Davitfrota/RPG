@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Enemies/Base/EnemyScript.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+enemyName = "Legendary Guardian Knight"
+enemyFamily = 3
+enemyUndeadType = 0
+enemyDemonType = 0
+enemyForestType = 0
+enemyHumanType = 1
+strengthValue = 40
+enduranceValue = 40
+staminaValue = 30
+intelligenceValue = 0
+summonManaCost = 500

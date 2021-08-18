@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DeathMusic.wav-8247389b1f38aee57836a37a2d3baddb.sample"
+
+[deps]
+
+source_file="res://Videos & Audio/Audio/DeathMusic.wav"
+dest_files=[ "res://.import/DeathMusic.wav-8247389b1f38aee57836a37a2d3baddb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

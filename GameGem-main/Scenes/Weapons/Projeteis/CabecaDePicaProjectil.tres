@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Weapons/Projeteis/Base/Projectil.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Area/0x72_DungeonTilesetII_v1.3.1/0x72_16x16DungeonTileset.v4 (1).png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 118, 143, 4, 4 )
+
+[resource]
+script = ExtResource( 1 )
+scaleX = 1.0
+scaleY = 1.0
+collisionRadius = 10
+staticTexture = SubResource( 1 )
+subdivide = false
+speed = 300
+ricochetes = 0

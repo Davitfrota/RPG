@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Collectables/HealthPotion.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player/Classes/Mage.tres" type="Resource" id=3]
+[ext_resource path="res://Scenes/Enemies/BigZombie.tscn" type="PackedScene" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 344, 212 )
+playerClass = ExtResource( 3 )
+
+[node name="BigZombie" parent="." instance=ExtResource( 4 )]
+position = Vector2( 497, 214 )
+
+[node name="HealthPotion" parent="." instance=ExtResource( 2 )]
+position = Vector2( 346, 267 )
+collision_mask = 3
+healAmount = 50
